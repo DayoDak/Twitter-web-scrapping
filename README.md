@@ -1,20 +1,20 @@
 # Twitter Text Analysis of the Presidential 2023 Election.
 
-![](Voters.jpg)
+![Nigeria Decides](Voters.jpg)
 
 This project is an RStudio project on Twitter Text Analysis of the three presidential candidates of the Major  three political parties in Nigeria for the upcoming 2023 presidential election. This project was aimed at getting insights on Twitter users in Nigeria towards the 2023 presidential elections. Twitter was chosen as the choice social media tool to access vast opinions as this is a tool heavily used by Nigeria’s political elites and the largest percentage of the youth population in the country.
 
 ## Problem Statements
 - What are the most frequent words?
 - Who is the most talked about candidate?
-- What is the most popular sentiments around the elcection?
+- What is the most popular sentiments around the election?
 
 ## Analysis
 - 9000 tweets about the presidential candidates of Labour Party(L.P.), Peoples Democratic Party(P.D.P), All Progressives Congress(A.P.C.) between february 11 to february 13 were collected and analyzed using Rstudio as the statistical tool.
 - Sentiment analysis was ran to get insights into the opinions of Twitter users towards the elections.
 
 ## Visualisation
-Three charts was created to provide answers to the problem statements.
+Three charts were created to provide answers to the problem statements.
 
 - **The Most Frequent Words:** 
 This problem statement was answered using two charts to give a better understanding. The **Bar Chart** shows the Top Ten most frequent words used during the period of consideration while the **Word Cloud** shows the 200 most used words during this same period.

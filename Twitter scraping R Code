@@ -1,0 +1,81 @@
+# Twitter Web scrapping by Dayo
+
+library(tidyverse)
+library(rtweet)
+library(twitteR)
+library(academictwitteR)
+library(tm)
+library(wordcloud)
+library(syuzhet)
+
+# Create authentication token
+
+
+create_token(
+  app = "XXX",
+  consumer_key = "XXX",
+  consumer_secret = "XXX",
+  access_token = "XXX",
+  access_secret = "XXX",
+  set_renv = TRUE
+)
+
+
+setup_twitter_oauth(consumer_key, consumer_secret, access_token, access_secret)
+
+# Search for keyword
+Peter_Obi <- search_tweets("Obi OR obidient", n = 3000, include_rts = FALSE)
+Tinubu <- search_tweets("tinubu OR batified", n=3000, include_rts=FALSE)
+Atiku <- search_tweets("atiku OR atikulate", n=3000, include_rts=FALSE)
+
+
+election <- rbind(Peter_Obi, Tinubu, Atiku)
+
+saveRDS(election, "election.rds")
+
+# Preview the first few tweets
+head(election)
+View(election)
+
+# Covert to Corpus
+election_text <- election$full_text
+election_doc <- Corpus(VectorSource(election_text))
+
+# Clean the extracted data
+election_doc <- tm_map(election_doc, content_transformer(tolower))
+election_doc <- tm_map(election_doc, removeNumbers)
+election_doc <- tm_map(election_doc, removeWords, stopwords("english"))
+election_doc <- tm_map(election_doc, removePunctuation)
+election_doc <- tm_map(election_doc, stripWhitespace)
+election_doc <- tm_map(election_doc, removeWords, c("will","can"))
+
+# Convert to Matrix
+
+dtop<-TermDocumentMatrix(election_doc)
+m<-as.matrix(dtop)
+v<-sort(rowSums(m), decreasing = TRUE)
+d<-data.frame(frequency=v)
+d<-data.frame(word=names(v), frequency=v)
+head(d,10)
+
+# Visualisation
+
+barplot((d[1:10,])$freq, las = 2, names.arg = d[1:10,]$word,
+        col ="green", main ="Top Ten Most Frequent words",
+        ylab ="word frequencies")
+
+set.seed(1234)
+wordcloud(words = d$word, freq = d$freq, min.freq = 5,
+          max.words = 100, random.order = FALSE, rot.per = 0.40,
+          colors = brewer.pal(8,"Dark2"))
+
+
+sentiment_analysis<-iconv(election$full_text)
+s<-get_nrc_sentiment(sentiment_analysis)
+s[1:10,]
+
+review<-colSums(s[,])
+print(review)
+
+barplot(colSums(s), las=2, col=rainbow(10), ylab='Count', main='Sentiment')
+

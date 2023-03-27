@@ -12,6 +12,7 @@ This project is an RStudio project on Twitter Text Analysis of the three preside
 ## Analysis
 - 9000 tweets about the presidential candidates of Labour Party(L.P.), Peoples Democratic Party(P.D.P), All Progressives Congress(A.P.C.) between february 11 to february 13 were collected and analyzed using Rstudio as the statistical tool.
 - Sentiment analysis was ran to get insights into the opinions of Twitter users towards the elections.
+- The R Script used for the entire process and analysis can be accessed [here.](https://github.com/DayoDak/Twitter-web-scrapping/blob/a35f547fa20d600d430466d11e7d89164cd3833a/Twitter%20scraping%20R%20Script)
 
 ## Visualisation
 Three charts were created to provide answers to the problem statements.
@@ -33,4 +34,3 @@ The sentiment analysis shows the public were more negative/toxic in their though
 
 **Recommendation:** **_Twitter users should refrain from using negative and fearful words as this promotes a toxic environment. Also, the government should try to allay the fears of the citizens towards the 2023 elections by ensuring a free and fair electoral process._**
 
- 

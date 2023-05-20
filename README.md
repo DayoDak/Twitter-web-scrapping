@@ -2,7 +2,7 @@
 
 ![Nigeria Decides](Voters.jpg)
 
-This project is an RStudio project on Twitter Text Analysis of the three presidential candidates of the Major  three political parties in Nigeria for the upcoming 2023 presidential election. This project was aimed at getting insights on Twitter users in Nigeria towards the 2023 presidential elections. Twitter was chosen as the choice social media tool to access vast opinions as this is a tool heavily used by Nigeria’s political elites and the largest percentage of the youth population in the country.
+This project is an RStudio project on Twitter Text Analysis of the three presidential candidates of the Major three political parties in Nigeria for the 2023 presidential election. This project was aimed at getting insights from Twitter users in Nigeria towards the 2023 presidential elections. Twitter was chosen as the choice social media tool to access vast opinions, this is a tool heavily used by Nigeria’s political elites and the largest percentage of the youth population in the country.
 
 ## Problem Statements
 - What are the most frequent words?
